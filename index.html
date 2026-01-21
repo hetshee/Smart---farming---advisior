@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-based Smart Farming Advisor - Get personalized crop advice, irrigation schedules, fertilizer recommendations and pest warnings for Indian farmers">
+    <meta name="keywords"
+        content="farming, agriculture, crop advice, irrigation, fertilizer, pest control, Indian farming">
+    <title>🌾 Smart Farming Advisor | AI-Powered Agricultural Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-element leaf1">🌿</div>
+        <div class="floating-element leaf2">🌱</div>
+        <div class="floating-element leaf3">🍃</div>
+        <div class="floating-element sun">☀️</div>
+        <div class="floating-element cloud1">☁️</div>
+        <div class="floating-element cloud2">☁️</div>
+        <div class="floating-element drop1">💧</div>
+        <div class="floating-element drop2">💧</div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <div class="logo-text">
+                    <h1 id="app-title">Smart Farming Advisor</h1>
+                    <p id="app-subtitle">AI-Powered Agricultural Guidance</p>
+                </div>
+            </div>
+            <div class="language-badge" id="current-lang-badge">
+                <span class="lang-flag">🌐</span>
+                <span id="current-lang-name">Select Language</span>
+            </div>
+        </header>
+
+        <!-- Language Selection Screen -->
+        <section class="screen active" id="language-screen">
+            <div class="glass-card language-card">
+                <div class="card-header">
+                    <h2>🌍 Choose Your Language</h2>
+                    <p>अपनी भाषा चुनें • તમારી ભાષા પસંદ કરો • तुमची भाषा निवडा • உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்</p>
+                </div>
+                <div class="language-grid">
+                    <button class="language-btn" data-lang="en">
+                        <span class="lang-emoji">🇬🇧</span>
+                        <span class="lang-name">English</span>
+                        <span class="lang-native">English</span>
+                    </button>
+                    <button class="language-btn" data-lang="hi">
+                        <span class="lang-emoji">🇮🇳</span>
+                        <span class="lang-name">Hindi</span>
+                        <span class="lang-native">हिंदी</span>
+                    </button>
+                    <button class="language-btn" data-lang="gu">
+                        <span class="lang-emoji">🏛️</span>
+                        <span class="lang-name">Gujarati</span>
+                        <span class="lang-native">ગુજરાતી</span>
+                    </button>
+                    <button class="language-btn" data-lang="mr">
+                        <span class="lang-emoji">🏔️</span>
+                        <span class="lang-name">Marathi</span>
+                        <span class="lang-native">मराठी</span>
+                    </button>
+                    <button class="language-btn" data-lang="ta">
+                        <span class="lang-emoji">🛕</span>
+                        <span class="lang-name">Tamil</span>
+                        <span class="lang-native">தமிழ்</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Form Screen -->
+        <section class="screen" id="input-screen">
+            <div class="glass-card form-card">
+                <div class="card-header">
+                    <h2 id="form-title">🌱 Tell Us About Your Farm</h2>
+                    <p id="form-subtitle">Fill in these details to get personalized advice</p>
+                </div>
+
+                <form id="farming-form">
+                    <!-- Crop Type -->
+                    <div class="form-group">
+                        <label for="crop-type" id="crop-label">
+                            <span class="label-icon">🌾</span>
+                            <span class="label-text">Crop Type</span>
+                        </label>
+                        <select id="crop-type" required>
+                            <option value="" id="crop-placeholder">Select your crop</option>
+                            <option value="rice">Rice (धान)</option>
+                            <option value="wheat">Wheat (गेहूं)</option>
+                            <option value="cotton">Cotton (कपास)</option>
+                            <option value="sugarcane">Sugarcane (गन्ना)</option>
+                            <option value="maize">Maize (मक्का)</option>
+                            <option value="pulses">Pulses (दाल)</option>
+                            <option value="groundnut">Groundnut (मूंगफली)</option>
+                            <option value="soybean">Soybean (सोयाबीन)</option>
+                            <option value="vegetables">Vegetables (सब्जियां)</option>
+                            <option value="fruits">Fruits (फल)</option>
+                        </select>
+                    </div>
+
+                    <!-- Soil Type -->
+                    <div class="form-group">
+                        <label for="soil-type" id="soil-label">
+                            <span class="label-icon">🏔️</span>
+                            <span class="label-text">Soil Type</span>
+                        </label>
+                        <div class="option-cards" id="soil-options">
+                            <div class="option-card" data-value="black">
+                                <span class="option-icon">⬛</span>
+                                <span class="option-name" id="soil-black">Black Soil</span>
+                            </div>
+                            <div class="option-card" data-value="red">
+                                <span class="option-icon">🟥</span>
+                                <span class="option-name" id="soil-red">Red Soil</span>
+                            </div>
+                            <div class="option-card" data-value="sandy">
+                                <span class="option-icon">🟨</span>
+                                <span class="option-name" id="soil-sandy">Sandy Soil</span>
+                            </div>
+                            <div class="option-card" data-value="clay">
+                                <span class="option-icon">🟫</span>
+                                <span class="option-name" id="soil-clay">Clay Soil</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="soil-type" required>
+                    </div>
+
+                    <!-- Season -->
+                    <div class="form-group">
+                        <label for="season" id="season-label">
+                            <span class="label-icon">🗓️</span>
+                            <span class="label-text">Season</span>
+                        </label>
+                        <div class="option-cards" id="season-options">
+                            <div class="option-card" data-value="kharif">
+                                <span class="option-icon">🌧️</span>
+                                <span class="option-name" id="season-kharif">Kharif</span>
+                                <span class="option-desc">Jun-Oct</span>
+                            </div>
+                            <div class="option-card" data-value="rabi">
+                                <span class="option-icon">❄️</span>
+                                <span class="option-name" id="season-rabi">Rabi</span>
+                                <span class="option-desc">Oct-Mar</span>
+                            </div>
+                            <div class="option-card" data-value="zaid">
+                                <span class="option-icon">☀️</span>
+                                <span class="option-name" id="season-zaid">Zaid</span>
+                                <span class="option-desc">Mar-Jun</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="season" required>
+                    </div>
+
+                    <!-- Water Availability -->
+                    <div class="form-group">
+                        <label for="water" id="water-label">
+                            <span class="label-icon">💧</span>
+                            <span class="label-text">Water Availability</span>
+                        </label>
+                        <div class="option-cards" id="water-options">
+                            <div class="option-card" data-value="low">
+                                <span class="option-icon">🏜️</span>
+                                <span class="option-name" id="water-low">Low</span>
+                            </div>
+                            <div class="option-card" data-value="medium">
+                                <span class="option-icon">🌊</span>
+                                <span class="option-name" id="water-medium">Medium</span>
+                            </div>
+                            <div class="option-card" data-value="high">
+                                <span class="option-icon">💦</span>
+                                <span class="option-name" id="water-high">High</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="water" required>
+                    </div>
+
+                    <!-- Farm Size -->
+                    <div class="form-group">
+                        <label for="farm-size" id="farm-label">
+                            <span class="label-icon">📐</span>
+                            <span class="label-text">Farming Area Size</span>
+                        </label>
+                        <div class="option-cards" id="farm-options">
+                            <div class="option-card" data-value="small">
+                                <span class="option-icon">🏡</span>
+                                <span class="option-name" id="farm-small">Small</span>
+                                <span class="option-desc">&lt; 2 acres</span>
+                            </div>
+                            <div class="option-card" data-value="medium">
+                                <span class="option-icon">🏘️</span>
+                                <span class="option-name" id="farm-medium">Medium</span>
+                                <span class="option-desc">2-10 acres</span>
+                            </div>
+                            <div class="option-card" data-value="large">
+                                <span class="option-icon">🏞️</span>
+                                <span class="option-name" id="farm-large">Large</span>
+                                <span class="option-desc">&gt; 10 acres</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="farm-size" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <span class="btn-icon">🚀</span>
+                        <span class="btn-text" id="submit-text">Get My Farming Advice</span>
+                    </button>
+                </form>
+
+                <button class="back-btn" id="back-to-lang">
+                    <span>← Change Language</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section class="screen" id="results-screen">
+            <div class="results-container">
+                <!-- Loading Animation -->
+                <div class="loading" id="loading">
+                    <div class="loading-spinner">
+                        <div class="spinner-ring"></div>
+                        <span class="loading-icon">🌱</span>
+                    </div>
+                    <p class="loading-text" id="loading-text">Analyzing your farm data...</p>
+                </div>
+
+                <!-- Results Content -->
+                <div class="results-content" id="results-content">
+                    <!-- Summary Card -->
+                    <div class="glass-card summary-card">
+                        <h2 id="summary-title">📋 Your Farm Summary</h2>
+                        <div class="summary-grid" id="summary-grid"></div>
+                    </div>
+
+                    <!-- Advice Cards -->
+                    <div class="advice-grid">
+                        <!-- Crop Suitability -->
+                        <div class="glass-card advice-card">
+                            <div class="advice-header crop-header">
+                                <span class="advice-icon">🌾</span>
+                                <h3 id="crop-advice-title">Crop Suitability</h3>
+                            </div>
+                            <div class="advice-content" id="crop-advice"></div>
+                        </div>
+
+                        <!-- Irrigation Schedule -->
+                        <div class="glass-card advice-card">
+                            <div class="advice-header irrigation-header">
+                                <span class="advice-icon">💧</span>
+                                <h3 id="irrigation-title">Irrigation Schedule</h3>
+                            </div>
+                            <div class="advice-content" id="irrigation-advice"></div>
+                        </div>
+
+                        <!-- Fertilizer Recommendation -->
+                        <div class="glass-card advice-card">
+                            <div class="advice-header fertilizer-header">
+                                <span class="advice-icon">🧪</span>
+                                <h3 id="fertilizer-title">Fertilizer Guide</h3>
+                            </div>
+                            <div class="advice-content" id="fertilizer-advice"></div>
+                        </div>
+
+                        <!-- Pest & Disease Warnings -->
+                        <div class="glass-card advice-card warning-card">
+                            <div class="advice-header pest-header">
+                                <span class="advice-icon">🐛</span>
+                                <h3 id="pest-title">Pest & Disease Alerts</h3>
+                            </div>
+                            <div class="advice-content" id="pest-advice"></div>
+                        </div>
+
+                        <!-- Cost Saving Tips -->
+                        <div class="glass-card advice-card tips-card">
+                            <div class="advice-header tips-header">
+                                <span class="advice-icon">💡</span>
+                                <h3 id="tips-title">Smart Farming Tips</h3>
+                            </div>
+                            <div class="advice-content" id="tips-advice"></div>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="disclaimer">
+                        <p id="disclaimer-text">⚠️ This advice is for educational purposes only. Please consult local
+                            agricultural experts for specific guidance.</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="action-btn secondary" id="new-query-btn">
+                            <span>🔄</span>
+                            <span id="new-query-text">New Query</span>
+                        </button>
+                        <button class="action-btn primary" id="print-btn">
+                            <span>🖨️</span>
+                            <span id="print-text">Print Advice</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p id="footer-text">🌾 Smart Farming Advisor • Made with ❤️ for Indian Farmers</p>
+        </footer>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="farming-data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
